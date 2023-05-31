@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Ví dụ lấy giá trị Request từ URL</h2>
+    <?php
+        $n=0;
+        $hoten="";
+        if(isset($_REQUEST["solan"])&& isset($_REQUEST["hoten"])){
+            $n=$_REQUEST["solan"];
+            $hoten=$_REQUEST["hoten"];
+        }else{
+            echo "<p><a href=\"?hoten=FPT&&solan=5\">Thử đường link</a></p>";
+        }
+        for ($i=0;$i<$n;$i++){
+    ?>
+        <h3><?=$i?> - Xin chào <?=$hoten?></h3>
+    <?php
+        }
+    ?>
+</body>
+</html>
