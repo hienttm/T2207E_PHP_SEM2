@@ -14,10 +14,10 @@ $pass= md5($_REQUEST["tPassword"]);
 /*kết nối csdl*/
 $servername = "localhost";
 $userSQL = "root";
-$passSQL = "";
+$passSQL = "root";
 //kết nối CSDL
 try {
-  $conn = new PDO("mysql:host=$servername;dbname=T2205MPHP", $userSQL, $passSQL);
+  $conn = new PDO("mysql:host=$servername;dbname=T2207E_PHP", $userSQL, $passSQL);
   // set the PDO error mode to exception
   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   $conn->query("SET NAMES UTF8");//thiết lập làm việc vởi unicode

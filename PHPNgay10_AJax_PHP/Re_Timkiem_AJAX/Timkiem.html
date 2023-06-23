@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tìm kiếm</title>
+    <script src="jquery.min.js"></script>
+    <script>
+    function timkiemAJAX()
+    {
+        tukhoa=$("#tukhoa").val();
+        namxb=$("#namxb").val();
+        if(isNaN(namxb))
+            namxb="";
+        $("#ketqua").html("Đang tìm kiếm...");
+        $.post(
+            "ListBooks.php",
+            {keyword:tukhoa, year:namxb},
+            function(responseData,status){
+                if(status=="success")
+                    $("#ketqua").html(responseData);
+                else
+                    $("#ketqua").html("<h3>Lỗi gửi request<h3>");
+            }
+        );
+       
+    }
+    $(document).ready(function(){
+        $("#tukhoa").keyup(timkiemAJAX);
+        $("#namxb").keyup(timkiemAJAX);
+    })
+    </script>
+</head>
+<body>
+    <div>Tìm kiếm sách: 
+        Tên sách: <input type="text" name="tukhoa" id="tukhoa">
+        Năm XB: <input type="text" name="namxb" id="namxb">
+    </div>
+    <div id="ketqua" style="width:800px; border:1px red solid; margin:5px auto" >
+        Kết quả
+    </div>
+</body>
+</html>

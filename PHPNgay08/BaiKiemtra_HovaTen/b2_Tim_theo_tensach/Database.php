@@ -5,7 +5,7 @@ function ConnectDB()
     $conn = NULL;
     try
     {
-    $conn = new PDO("mysql:host=localhost;dbname=t2207e_baikiemtra","root","");
+    $conn = new PDO("mysql:host=localhost;dbname=T2207E_PHP_EXAM","root","root");
     $conn->query("SET NAMES UTF8");//thiết lập chế độ unicode
     }
     catch(PDOException $ex)
