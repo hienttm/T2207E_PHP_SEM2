@@ -12,7 +12,7 @@ class clsDatabase{
     {
         $this->conn=NULL;
         $this->pdo_stm=NULL;
-        $servername = "localhost"; 
+        $servername = "localhost:3306"; 
         $user = "root";
         $pass = "root";
         try{

@@ -8,7 +8,7 @@ class clsDatabase
 		try//kết nối CSDL và lưu vào thuộc tính conn
 		{
 			$this->conn = new PDO("mysql:host=localhost;
-			dbname=T2207E_PHP_DemoOOPDB","root","root");
+			dbname=T2207E_PHP","root","root");
 			$this->conn->exec("SET NAMES UTF8");//Thiết lập làm việc với unicode
 		}
 		catch(PDOException $ex)
